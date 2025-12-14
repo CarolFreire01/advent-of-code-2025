@@ -32,6 +32,6 @@ replay_pid*
 
 ### VS Code ###
 .vscode/
-
+.files/
 ### Mac OS ###
 .DS_Store
