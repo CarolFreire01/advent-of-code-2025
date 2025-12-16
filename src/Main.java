@@ -1,5 +1,7 @@
 import challenges.DayOne.ChallengeOne;
 import challenges.DayOne.ChallengeTwo;
+import challenges.DayThree.ChallengeFive;
+import challenges.DayThree.ChallengeSix;
 import challenges.DayTwo.ChallengeFour;
 import challenges.DayTwo.ChallengeThree;
 
@@ -25,5 +27,12 @@ public class Main {
         ChallengeFour challengeFour = new ChallengeFour();
         System.out.println("Total Count: " + challengeFour.sumInvalidIds());
 
+        System.out.println("=============== Challenge FIVE ===============");
+        ChallengeFive challengeFive = new ChallengeFive();
+        System.out.println("Total Count: " + challengeFive.getTotalJoltage());
+
+        System.out.println("=============== Challenge Six ===============");
+        ChallengeSix challengeSix = new ChallengeSix();
+        System.out.println("Total Count: " + challengeSix.getRightTotalJoltage());
     }
 }

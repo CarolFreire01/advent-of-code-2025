@@ -11,7 +11,7 @@ public class ChallengeThree {
     // invalid ID are very number who is repeated -> 11-22
     // key word: range
     public long getAndCalculateInvalidId() {
-        List<Pair> ranges = getValueFileAndFormat("/challenge-day-three.txt");
+        List<Pair> ranges = getValueFileAndFormat("/challenge-two.txt");
         long finalValue = 0;
 
         for (Pair pair : ranges) {

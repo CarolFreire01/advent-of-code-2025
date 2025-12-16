@@ -41,8 +41,8 @@ public class Utils {
             return br.lines()
                     .flatMap(line -> Arrays.stream(line.split(",")))
                     .map(String::trim)
-                    .filter(s -> !s.isEmpty())              // ✅ remove tokens vazios (causados por vírgula final)
-                    .map(s -> s.replaceAll("\\s+", ""))     // ✅ remove espaços no meio, se existirem
+                    .filter(s -> !s.isEmpty())
+                    .map(s -> s.replaceAll("\\s+", ""))
                     .map(token -> {
                         String[] parts = token.split("-");
                         if (parts.length != 2) {
@@ -54,6 +54,24 @@ public class Utils {
                                 Long.parseLong(parts[1])
                         );
                     })
+                    .toList();
+        } catch (Exception e) {
+            throw new RuntimeException("Error reading file: " + fileName, e);
+        }
+    }
+
+    public static List<String> getNumbersFile(String fileName) {
+        InputStream filePath = getInputStream(fileName);
+
+        if (filePath == null) {
+            throw new IllegalArgumentException("File not found: " + fileName);
+        }
+
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(filePath, StandardCharsets.UTF_8))) {
+            return br.lines()
+                    .map(String::trim)
+                    .filter(s -> !s.isEmpty())
+                    .map(String::toString)
                     .toList();
         } catch (Exception e) {
             throw new RuntimeException("Error reading file: " + fileName, e);

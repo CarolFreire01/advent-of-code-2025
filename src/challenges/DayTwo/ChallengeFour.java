@@ -12,7 +12,7 @@ public class ChallengeFour {
     // key word: range
     // number that repeat AT LEAST twice
     public long sumInvalidIds() {
-        List<Pair> ranges = getValueFileAndFormat("/challenge-day-three.txt");
+        List<Pair> ranges = getValueFileAndFormat("/challenge-two.txt");
 
         long total = 0;
         for (Pair range : ranges) {
