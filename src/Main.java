@@ -1,48 +1,45 @@
-import challenges.DayFour.ChallengeEight;
-import challenges.DayFour.ChallengeSeven;
-import challenges.DayOne.ChallengeOne;
-import challenges.DayOne.ChallengeTwo;
-import challenges.DayThree.ChallengeFive;
-import challenges.DayThree.ChallengeSix;
-import challenges.DayTwo.ChallengeFour;
-import challenges.DayTwo.ChallengeThree;
+import challenges.Day04.ChallengeEight;
+import challenges.Day04.ChallengeSeven;
+import challenges.Day01.ChallengeOne;
+import challenges.Day01.ChallengeTwo;
+import challenges.Day03.ChallengeFive;
+import challenges.Day03.ChallengeSix;
+import challenges.Day02.ChallengeFour;
+import challenges.Day02.ChallengeThree;
 
 public class Main {
+
     public static void main(String[] args) {
 
-        System.out.println("=============== Challenge ONE ===============");
+        System.out.println("=============== DAY ONE ===============");
 
         ChallengeOne challengeOne = new ChallengeOne();
-        System.out.println("Password: " + challengeOne.getPassword());
-
-        System.out.println("=============== Challenge TWO ===============");
+        System.out.println("Day One -> Part 1: " + challengeOne.getPassword());
 
         ChallengeTwo challengeTwo = new ChallengeTwo();
-        System.out.println("Password: " + challengeTwo.getPasswordDuringRotation());
+        System.out.println("Day One -> Part 2: " + challengeTwo.getPasswordDuringRotation());
 
-        System.out.println("=============== Challenge THREE ===============");
+        System.out.println("=============== DAY TWO ===============");
 
         ChallengeThree challengeThree = new ChallengeThree();
-        System.out.println("Total Count: " + challengeThree.getAndCalculateInvalidId());
+        System.out.println("Day Two -> Part 1: " + challengeThree.getAndCalculateInvalidId());
 
-        System.out.println("=============== Challenge FOUR ===============");
         ChallengeFour challengeFour = new ChallengeFour();
-        System.out.println("Total Count: " + challengeFour.sumInvalidIds());
+        System.out.println("Day Two -> Part 2: " + challengeFour.sumInvalidIds());
 
-        System.out.println("=============== Challenge FIVE ===============");
+        System.out.println("=============== DAY THREE ===============");
+
         ChallengeFive challengeFive = new ChallengeFive();
-        System.out.println("Total Count: " + challengeFive.getTotalJoltage());
+        System.out.println("Day Three -> Part 1: " + challengeFive.getTotalJoltage());
 
-        System.out.println("=============== Challenge SIX ===============");
         ChallengeSix challengeSix = new ChallengeSix();
-        System.out.println("Total Count: " + challengeSix.getRightTotalJoltage());
+        System.out.println("Day Three -> Part 2: " + challengeSix.getRightTotalJoltage());
 
-        System.out.println("=============== Challenge SEVEN ===============");
+        System.out.println("=============== DAY FOUR ===============");
         ChallengeSeven challengeSeven = new ChallengeSeven();
-        System.out.println("Total Count: " + challengeSeven.getRoll());
+        System.out.println("Day Four -> Part 1: " + challengeSeven.getRoll());
 
-        System.out.println("=============== Challenge EIGHT ===============");
         ChallengeEight challengeEight = new ChallengeEight();
-        System.out.println("Total Count: " + challengeEight.getMoreRoll());
+        System.out.println("Day Four -> Part 2: " + challengeEight.getMoreRoll());
     }
 }

@@ -1,13 +1,13 @@
 package util;
 
-import challenges.DayTwo.support.Pair;
+import challenges.Day02.support.Pair;
+import challenges.Day05.ParsedInput;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static java.util.stream.Collectors.toList;
 
 public class Utils {
 
@@ -107,6 +107,50 @@ public class Utils {
         }
 
         return grid;
+    }
+
+    public static ParsedInput parseNumbers(String fileName) {
+        InputStream filePath = getInputStream(fileName);
+
+        if (filePath == null) {
+            throw new IllegalArgumentException("File not found: " + fileName);
+        }
+
+        List<Pair> ranges = new ArrayList<>();
+        List<Long> singles = new ArrayList<>();
+
+        boolean readingRanges = true;
+
+        try (BufferedReader br = new BufferedReader(
+                new InputStreamReader(filePath, StandardCharsets.UTF_8))) {
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                line = line.trim();
+
+                if (line.isEmpty()) {
+                    readingRanges = false;
+                    continue;
+                }
+
+                if (readingRanges) {
+                    String[] parts = line.split("-");
+                    if (parts.length != 2) {
+                        throw new IllegalArgumentException("Invalid range: " + line);
+                    }
+                    Long start = Long.parseLong(parts[0]);
+                    Long end   = Long.parseLong(parts[1]);
+                    ranges.add(new Pair(start, end));
+                } else {
+                    singles.add(Long.parseLong(line));
+                }
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException("Error reading file: " + fileName, e);
+        }
+
+        return new ParsedInput(ranges, singles);
     }
 
 

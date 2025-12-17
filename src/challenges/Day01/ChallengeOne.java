@@ -1,4 +1,4 @@
-package challenges.DayOne;
+package challenges.Day01;
 
 import java.util.List;
 

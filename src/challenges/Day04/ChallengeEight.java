@@ -1,4 +1,4 @@
-package challenges.DayFour;
+package challenges.Day04;
 
 import static util.Utils.readFileAsGrid;
 

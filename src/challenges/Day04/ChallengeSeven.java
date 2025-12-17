@@ -1,6 +1,4 @@
-package challenges.DayFour;
-
-import java.util.Arrays;
+package challenges.Day04;
 
 import static util.Utils.readFileAsGrid;
 

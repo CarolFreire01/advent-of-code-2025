@@ -1,6 +1,6 @@
-package challenges.DayTwo;
+package challenges.Day02;
 
-import challenges.DayTwo.support.Pair;
+import challenges.Day02.support.Pair;
 
 import java.util.List;
 
