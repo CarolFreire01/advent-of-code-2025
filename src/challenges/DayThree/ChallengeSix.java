@@ -1,8 +1,6 @@
 package challenges.DayThree;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
 
 import static util.Utils.getNumbersFile;
 

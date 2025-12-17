@@ -78,6 +78,38 @@ public class Utils {
         }
     }
 
+    public static char[][] readFileAsGrid(String fileName) {
+        InputStream filePath = getInputStream(fileName);
+
+        if (filePath == null) {
+            throw new IllegalArgumentException("File not found: " + fileName);
+        }
+
+        List<String> lines;
+        try (BufferedReader br = new BufferedReader(
+                new InputStreamReader(filePath, StandardCharsets.UTF_8))) {
+            lines = br.lines().toList();
+        } catch (Exception e) {
+            throw new RuntimeException("Error reading file: " + fileName, e);
+        }
+
+        if (lines.isEmpty()) {
+            return new char[0][0];
+        }
+
+        int rows = lines.size();
+        int cols = lines.get(0).length(); // todas as linhas têm o mesmo tamanho
+
+        char[][] grid = new char[rows][cols];
+
+        for (int row = 0; row < rows; row++) {
+            grid[row] = lines.get(row).toCharArray();
+        }
+
+        return grid;
+    }
+
+
     private static InputStream getInputStream(String fileName) {
         return Utils.class.getClassLoader().getResourceAsStream(BASE_PATH + fileName);
     }
