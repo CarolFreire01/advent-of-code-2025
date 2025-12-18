@@ -6,6 +6,7 @@ import challenges.Day03.ChallengeFive;
 import challenges.Day03.ChallengeSix;
 import challenges.Day02.ChallengeFour;
 import challenges.Day02.ChallengeThree;
+import challenges.Day05.DayFive;
 
 public class Main {
 
@@ -41,5 +42,11 @@ public class Main {
 
         ChallengeEight challengeEight = new ChallengeEight();
         System.out.println("Day Four -> Part 2: " + challengeEight.getMoreRoll());
+
+        System.out.println("=============== DAY FIVE ===============");
+
+        DayFive dayFive = new DayFive();
+        dayFive.selectIngredient();
+
     }
 }

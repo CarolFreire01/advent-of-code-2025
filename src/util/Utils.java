@@ -153,6 +153,32 @@ public class Utils {
         return new ParsedInput(ranges, singles);
     }
 
+    public static List<Pair> mergeRanges(List<Pair> ranges) {
+        List<Pair> normalized = ranges.stream()
+                .map(r -> r.first() <= r.second() ? r : new Pair(r.second(), r.first()))
+                .sorted((a, b) -> Long.compare(a.first(), b.first()))
+                .toList();
+
+        List<Pair> merged = new ArrayList<>();
+
+        long start = normalized.getFirst().first();
+        long end = normalized.getFirst().second();
+
+        for (int i = 1; i < normalized.size(); i++) {
+            Pair next = normalized.get(i);
+
+            if (next.first() <= end) {
+                end = Math.max(end, next.second());
+            } else {
+                merged.add(new Pair(start, end));
+                start = next.first();
+                end = next.second();
+            }
+        }
+
+        merged.add(new Pair(start, end));
+        return merged;
+    }
 
     private static InputStream getInputStream(String fileName) {
         return Utils.class.getClassLoader().getResourceAsStream(BASE_PATH + fileName);
