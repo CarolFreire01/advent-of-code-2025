@@ -2,6 +2,7 @@ package util;
 
 import challenges.Day02.support.Pair;
 import challenges.Day05.ParsedInput;
+import challenges.Day06.ColumnOperator;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -178,6 +179,51 @@ public class Utils {
 
         merged.add(new Pair(start, end));
         return merged;
+    }
+
+    public static List<ColumnOperator> readColumnsWithOps(String fileName) {
+        List<String> lines = Utils.getValueFile(fileName)
+                .stream()
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .toList();
+
+        String[] ops = lines.getLast().split("\\s+");
+        int cols = ops.length;
+
+        List<List<Long>> values = new ArrayList<>();
+        for (int i = 0; i < cols; i++) values.add(new ArrayList<>());
+
+        for (int i = 0; i < lines.size() - 1; i++) {
+            String[] nums = lines.get(i).split("\\s+");
+            for (int c = 0; c < cols; c++) {
+                values.get(c).add(Long.parseLong(nums[c]));
+            }
+        }
+
+        List<ColumnOperator> result = new ArrayList<>();
+        for (int c = 0; c < cols; c++) {
+            result.add(new ColumnOperator(ops[c].charAt(0), values.get(c)));
+        }
+
+        return result;
+    }
+
+    public static List<String> readRawLines(String fileName) {
+        InputStream in = getInputStream(fileName);
+
+        if (in == null) {
+            throw new IllegalArgumentException("File not found: " + fileName);
+        }
+
+        try (BufferedReader br = new BufferedReader(
+                new InputStreamReader(in, StandardCharsets.UTF_8))) {
+
+            return br.lines().toList();
+
+        } catch (Exception e) {
+            throw new RuntimeException("Error reading file: " + fileName, e);
+        }
     }
 
     private static InputStream getInputStream(String fileName) {
