@@ -8,6 +8,7 @@ import challenges.Day02.ChallengeFour;
 import challenges.Day02.ChallengeThree;
 import challenges.Day05.DayFive;
 import challenges.Day06.DaySix;
+import challenges.Day07.DaySeven;
 
 public class Main {
 
@@ -53,6 +54,12 @@ public class Main {
 
         DaySix daySix = new DaySix();
         daySix.getCephalopod();
+
+        System.out.println("=============== DAY SEVEN ===============");
+
+        DaySeven daySeven = new DaySeven();
+        daySeven.daySeven();
+
 
     }
 }

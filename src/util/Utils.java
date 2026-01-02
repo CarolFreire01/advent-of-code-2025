@@ -99,7 +99,7 @@ public class Utils {
         }
 
         int rows = lines.size();
-        int cols = lines.get(0).length(); // todas as linhas têm o mesmo tamanho
+        int cols = lines.getFirst().length(); // todas as linhas têm o mesmo tamanho
 
         char[][] grid = new char[rows][cols];
 
@@ -233,5 +233,9 @@ public class Utils {
     public static Integer getNumber(String instruction) {
         String number = instruction.substring(1);
         return Integer.valueOf(number);
+    }
+
+    private static long encodePosition(int row, int col) {
+        return ((long) row << 32) | (col & 0xFFFFFFFFL);
     }
 }
