@@ -2,7 +2,7 @@ package challenges.Day04;
 
 import static util.Utils.readFileAsGrid;
 
-public class ChallengeEight {
+public class DayFourPartOne {
 
     private static final char ACTIVE = '@';
     private static final char EMPTY  = '.';

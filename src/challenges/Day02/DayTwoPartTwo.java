@@ -6,7 +6,7 @@ import java.util.List;
 
 import static util.Utils.getValueFileAndFormat;
 
-public class ChallengeThree {
+public class DayTwoPartTwo {
 
     // invalid ID are very number who is repeated -> 11-22
     // key word: range

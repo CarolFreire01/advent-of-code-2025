@@ -5,7 +5,7 @@ import java.util.List;
 import static util.Utils.getNumber;
 import static util.Utils.getValueFile;
 
-public class ChallengeTwo {
+public class DayOnePartTwo {
 
     private static final int MAX_VALUE = 100;
     private static int PASSWORD = 0;

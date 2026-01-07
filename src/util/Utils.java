@@ -235,7 +235,4 @@ public class Utils {
         return Integer.valueOf(number);
     }
 
-    private static long encodePosition(int row, int col) {
-        return ((long) row << 32) | (col & 0xFFFFFFFFL);
-    }
 }

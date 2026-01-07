@@ -4,7 +4,7 @@ import java.util.List;
 
 import static util.Utils.getNumbersFile;
 
-public class ChallengeSix {
+public class DayThreePartTwo {
 
     public long getRightTotalJoltage() {
         List<String> listBatteryBank = getNumbersFile("/challenge-three.txt");

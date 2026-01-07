@@ -1,14 +1,15 @@
-import challenges.Day04.ChallengeEight;
-import challenges.Day04.ChallengeSeven;
-import challenges.Day01.ChallengeOne;
-import challenges.Day01.ChallengeTwo;
-import challenges.Day03.ChallengeFive;
-import challenges.Day03.ChallengeSix;
-import challenges.Day02.ChallengeFour;
-import challenges.Day02.ChallengeThree;
+import challenges.Day04.DayFourPartOne;
+import challenges.Day04.DayFourPartTwo;
+import challenges.Day01.DayOnePartOne;
+import challenges.Day01.DayOnePartTwo;
+import challenges.Day03.DayThreePartOne;
+import challenges.Day03.DayThreePartTwo;
+import challenges.Day02.DayTwoPartOne;
+import challenges.Day02.DayTwoPartTwo;
 import challenges.Day05.DayFive;
 import challenges.Day06.DaySix;
 import challenges.Day07.DaySeven;
+import challenges.Day08.DayEight;
 
 public class Main {
 
@@ -16,34 +17,34 @@ public class Main {
 
         System.out.println("=============== DAY ONE ===============");
 
-        ChallengeOne challengeOne = new ChallengeOne();
-        System.out.println("Day One -> Part 1: " + challengeOne.getPassword());
+        DayOnePartOne dayOnePartOne = new DayOnePartOne();
+        System.out.println("Day One -> Part 1: " + dayOnePartOne.getPassword());
 
-        ChallengeTwo challengeTwo = new ChallengeTwo();
-        System.out.println("Day One -> Part 2: " + challengeTwo.getPasswordDuringRotation());
+        DayOnePartTwo dayOnePartTwo = new DayOnePartTwo();
+        System.out.println("Day One -> Part 2: " + dayOnePartTwo.getPasswordDuringRotation());
 
         System.out.println("=============== DAY TWO ===============");
 
-        ChallengeThree challengeThree = new ChallengeThree();
-        System.out.println("Day Two -> Part 1: " + challengeThree.getAndCalculateInvalidId());
+        DayTwoPartTwo dayTwoPartTwo = new DayTwoPartTwo();
+        System.out.println("Day Two -> Part 1: " + dayTwoPartTwo.getAndCalculateInvalidId());
 
-        ChallengeFour challengeFour = new ChallengeFour();
+        DayTwoPartOne challengeFour = new DayTwoPartOne();
         System.out.println("Day Two -> Part 2: " + challengeFour.sumInvalidIds());
 
         System.out.println("=============== DAY THREE ===============");
 
-        ChallengeFive challengeFive = new ChallengeFive();
-        System.out.println("Day Three -> Part 1: " + challengeFive.getTotalJoltage());
+        DayThreePartOne dayThreePartOne = new DayThreePartOne();
+        System.out.println("Day Three -> Part 1: " + dayThreePartOne.getTotalJoltage());
 
-        ChallengeSix challengeSix = new ChallengeSix();
-        System.out.println("Day Three -> Part 2: " + challengeSix.getRightTotalJoltage());
+        DayThreePartTwo dayThreePartTwo = new DayThreePartTwo();
+        System.out.println("Day Three -> Part 2: " + dayThreePartTwo.getRightTotalJoltage());
 
         System.out.println("=============== DAY FOUR ===============");
-        ChallengeSeven challengeSeven = new ChallengeSeven();
-        System.out.println("Day Four -> Part 1: " + challengeSeven.getRoll());
+        DayFourPartTwo dayFourPartTwo = new DayFourPartTwo();
+        System.out.println("Day Four -> Part 1: " + dayFourPartTwo.getRoll());
 
-        ChallengeEight challengeEight = new ChallengeEight();
-        System.out.println("Day Four -> Part 2: " + challengeEight.getMoreRoll());
+        DayFourPartOne dayFourPartOne = new DayFourPartOne();
+        System.out.println("Day Four -> Part 2: " + dayFourPartOne.getMoreRoll());
 
         System.out.println("=============== DAY FIVE ===============");
 
@@ -60,6 +61,9 @@ public class Main {
         DaySeven daySeven = new DaySeven();
         daySeven.daySeven();
 
+        System.out.println("=============== DAY EIGHT ===============");
 
+        DayEight dayEight = new DayEight();
+        dayEight.dayEight();
     }
 }

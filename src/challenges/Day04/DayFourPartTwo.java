@@ -2,7 +2,7 @@ package challenges.Day04;
 
 import static util.Utils.readFileAsGrid;
 
-public class ChallengeSeven {
+public class DayFourPartTwo {
 
     private static final char ACTIVE = '@';
     private static final int MIN_NEIGHBORS = 4;
