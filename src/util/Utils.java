@@ -3,6 +3,7 @@ package util;
 import challenges.Day02.support.Pair;
 import challenges.Day05.ParsedInput;
 import challenges.Day06.ColumnOperator;
+import challenges.Day09.DayNine;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -61,6 +62,39 @@ public class Utils {
         }
     }
 
+    public static DayNine.MovieTheater readMovieTheater(String fileName) {
+        InputStream filePath = getInputStream(fileName);
+        if (filePath == null) throw new IllegalArgumentException("File not found: " + fileName);
+
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(filePath, StandardCharsets.UTF_8))) {
+
+            List<int[]> pairs = br.lines()
+                    .map(String::trim)
+                    .filter(s -> !s.isEmpty())
+                    .map(line -> line.replaceAll("\\s+", "")) // remove espaços
+                    .map(line -> {
+                        String[] parts = line.split(",");
+                        if (parts.length != 2) {
+                            throw new IllegalArgumentException("Formato inválido: '" + line + "'");
+                        }
+                        return new int[]{Integer.parseInt(parts[0]), Integer.parseInt(parts[1])};
+                    })
+                    .toList();
+
+            int[] xs = new int[pairs.size()];
+            int[] ys = new int[pairs.size()];
+            for (int i = 0; i < pairs.size(); i++) {
+                xs[i] = pairs.get(i)[0];
+                ys[i] = pairs.get(i)[1];
+            }
+
+            return new DayNine.MovieTheater(xs, ys);
+
+        } catch (Exception e) {
+            throw new RuntimeException("Error reading file: " + fileName, e);
+        }
+    }
+
     public static List<String> getNumbersFile(String fileName) {
         InputStream filePath = getInputStream(fileName);
 
@@ -99,7 +133,7 @@ public class Utils {
         }
 
         int rows = lines.size();
-        int cols = lines.getFirst().length(); // todas as linhas têm o mesmo tamanho
+        int cols = lines.getFirst().length();
 
         char[][] grid = new char[rows][cols];
 

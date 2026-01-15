@@ -10,6 +10,7 @@ import challenges.Day05.DayFive;
 import challenges.Day06.DaySix;
 import challenges.Day07.DaySeven;
 import challenges.Day08.DayEight;
+import challenges.Day09.DayNine;
 
 public class Main {
 
@@ -65,5 +66,11 @@ public class Main {
 
         DayEight dayEight = new DayEight();
         dayEight.dayEight();
+
+        System.out.println("=============== DAY NINE ===============");
+
+        DayNine dayNine = new DayNine();
+        dayNine.dayNine();
+
     }
 }
