@@ -27,7 +27,6 @@ public class Utils {
         } catch (Exception e) {
             throw new RuntimeException("Error reading file: " + fileName, e);
         }
-
     }
 
     public static List<Pair> getValueFileAndFormat(String fileName) {
@@ -260,7 +259,7 @@ public class Utils {
         }
     }
 
-    private static InputStream getInputStream(String fileName) {
+    public static InputStream getInputStream(String fileName) {
         return Utils.class.getClassLoader().getResourceAsStream(BASE_PATH + fileName);
     }
 
@@ -268,5 +267,4 @@ public class Utils {
         String number = instruction.substring(1);
         return Integer.valueOf(number);
     }
-
 }

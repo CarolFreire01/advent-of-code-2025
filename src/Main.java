@@ -11,10 +11,13 @@ import challenges.Day06.DaySix;
 import challenges.Day07.DaySeven;
 import challenges.Day08.DayEight;
 import challenges.Day09.DayNine;
+import challenges.Day10.DayTen;
+
+import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         System.out.println("=============== DAY ONE ===============");
 
@@ -71,6 +74,11 @@ public class Main {
 
         DayNine dayNine = new DayNine();
         dayNine.dayNine();
+
+        System.out.println("=============== DAY TEN ===============");
+
+        DayTen dayTen = new DayTen();
+        dayTen.dayTen();
 
     }
 }
